@@ -3,6 +3,12 @@
 **Summary:** Following 42 formation course, you will learn to use SQL and ORM (Object-Relational Mapping) in Symfony.  
 **Version:** 2
 
+```sh
+symfony new . --version=lts
+rm -rf .git
+symfony server:start
+```
+
 ## Table of Contents
 
 1. Foreword
