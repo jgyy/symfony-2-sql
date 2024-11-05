@@ -214,3 +214,53 @@ In order to solve this exercise, you will have to respect the following conditio
 - Display a success/error message on the list page, after updating an entity
 
 In the final version, this exercise will provide the option to update existing information from the database. By designing it, you will have completed the CRUD operations using SQL.
+
+## Exercise 07: ORM: update database information
+
+Turn-in directory: `ex07/`  
+Files to turn in: Files and folder from your application  
+Allowed functions: All methods
+
+Since each of the CRUD operations were implemented using both SQL and ORM, this exercise will reflect the usage of Update in ORM. For solving this exercise, you will have to design a new Symfony bundle capable of displaying and updating information from the database. Due to the usage of ORM, the database is reflected in PHP code using entities. In conclusion, the next requirements must be satisfied in order to solve this exercise:
+
+- Work within the default application bundle
+- Create a new Doctrine entity (you can use the structure from the previous exercises) mapped to a new table in the database
+- Design an HTML webpage table in which to show the existing information from the database
+- Develop a Symfony Form mapped to the entity created earlier
+- Create controller methods capable of handling the list, display and update of entities
+- No validations are required for this exercise
+- Only ORM commands must be used for modifying information in the database
+- Return a success/error message based on operation result
+
+## Exercise 08: SQL - update table structure, create relations
+
+Turn-in directory: `ex08/`  
+Files to turn in: Files and folder from your application  
+Allowed functions: All methods
+
+Congratulations! You have finished the CRUD operations using both SQL and ORM. Now you should be able to implement the CRUD operations using both options, without hesitation. But, due to the fact that project specification could change, a developer should also know how to change the database structure and, most important, how to create relations between database tables.
+
+As you may already know, in relational databases, we have 3 types of relationships between tables:
+- One-to-one, example: one wheel has one tyre and viceversa
+- One-to-many, example: one car has one owner, one owner could own several cars
+- Many-to-many, example: one order can have several products, one product could belong to several orders
+
+For this exercise, you have to design a Symfony bundle which is able to create a table with given structure, alter that table and add a new column and also create two relationships for two other tables (to be created) using foreign keys.
+
+More detailed, the next requirements have to be met, in order to solve this exercise:
+- Work within the default application bundle
+- Design the SQL code required for creating and altering a table and making relationships between tables
+- Create the initial table (named persons) using the structure from ex00, but don't add the address field. The table creation should be made using a link in the homepage and a success/error message should be displayed
+- Create a new controller method which will add a new column to the designed table (ex: column marital_status:ENUM(single, married, widower))
+- Create a new controller method for creating two new tables: bank_accounts and addresses. You have the freedom of designing the structure of these two tables
+- Create a one-to-one relationship between bank_accounts and person table and a one-to-many relation
+- Use only SQL for creating tables and relations
+- For each operation (create table, alter tables, create relations between tables) return a success/error message
+
+## Exercise 09: ORM - update table structure, create relations
+
+Turn-in directory: `ex09/`  
+Files to turn in: Files and folder from your application  
+Allowed functions: All methods
+
+For achieving the scope of this day, one important exercise should be done using both SQL and ORM techniques. It is now the time to update an entity and create relationships between entities using ORM. As stated in the previous exercise, there are 3 types of relations between entities (tables). One difference is that, in Symfony, these relations are made between entities and reflected in the database by automatically mapping foreign keys between tables (or creating connection tables for the many-to-many relation).
