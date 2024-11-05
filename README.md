@@ -315,3 +315,70 @@ For this exercise, the requirements are the following:
 - Use only SQL for making calls to the database
 - For the request of information from the database, make sure to use join, condition, sort. If one is missing, no points will be given for this exercise!
 - Add validations for parameters of the request
+
+## Exercise 12: ORM - Request with join, sort and condition
+
+Turn-in directory: `ex12/`  
+Files to turn in: Files and folder from your application  
+Allowed functions: All methods
+
+As you may already thought, since the last exercise represents an important part of a web application, the requirements of this exercise are based on the same idea. The big difference is that, this time, you will have to use only ORM methods for achieving the required result.
+
+In addition to the requirements of the last exercise, the following ideas have to be respected:
+
+- Work within the default application bundle
+- You can use the entities created in exercise 09, with one-to-one relationships between them
+- Make sure to create special repository queries for fetching desired information
+- Add validations for the parameters of the request
+
+## Exercise 13: ORM - Complete CRUD operations
+
+Turn-in directory: `ex13/`  
+Files to turn in: Files and folder from your application  
+Allowed functions: All methods
+
+Good job, you're almost at the end of this day. But, before you finish it, you will do two cool exercises. This exercise will reflect all the knowledge you gained by solving the previous exercises. The main idea is to implement all the operations represented in CRUD, using only ORM commands.
+
+The requirements that have to be met for this exercise are the following:
+
+- Work within the default application bundle
+- Create a new entity of Employee type, which will respect the following structure:
+  - id - integer
+  - firstname - string
+  - lastname - string
+  - email - string
+  - birthdate - datetime
+  - active - boolean
+  - employed_since - datetime
+  - employed_until - datetime
+  - hours - ENUM (8,6,4)
+  - salary - integer
+  - position - ENUM(manager, account_manager, qa_manager, dev_manager, ceo, coo, backend_dev, frontend_dev, qa_tester)
+- Create a one-to-many relationship between Employee entity and itself, representing the manager of an employee (each employee should have a manager - a person responsible)
+- Implement a read endpoint, edit endpoint, delete endpoint and creation endpoint for the Employee entity
+- The form for creating/editing an entity should contain different types of validations, based on the field type (ensure that some of them are required, unique, email has correct format, etc)
+- Success/error messages should be created for each operation
+- The application should not crash when requests are not correct (eg: deleting inexistent information, trying to insert duplicates, etc)
+
+## Exercise 14: SQL - Functional injections
+
+Turn-in directory: `ex14/`  
+Files to turn in: Files and folder from your application  
+Allowed functions: All methods
+
+As promised, this is the last exercise of this day, but it will be one of the most interesting. Maybe you have heard of the term SQL injection, but you never tried to create one. This exercise will prove the vulnerability of SQL and HTML forms without validations inside a website. An SQL injection represents a technique used to attack websites and run different SQL queries (get specific field values, change information, drop information, drop database) over the database, using unprotected form fields.
+
+For this exercise, the following requirements have to be met:
+
+- Work within the default application bundle
+- Create a controller method which will insert a new table into the database, if the table does not exist already
+- The table status should be reflected in the webpage using a specific message ("Table exists" vs "Table does not exist")
+- Create an HTML form in a webpage, mapped to a controller action, to insert information into the database
+- Add a functional SQL injection using Javascript, on the form submit event
+- The result of the SQL injection should be visible in the homepage or, if altering of information is done, the result should be visible in a listing of the database information
+
+## Submission and peer-evaluation
+
+Turn in your assignment in your Git repository as usual. Only the work inside your repository will be evaluated during the defense. Don't hesitate to double check the names of your folders and files to ensure they are correct.
+
+The evaluation process will happen on the computer of the evaluated group.
