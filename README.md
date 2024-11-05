@@ -4,7 +4,7 @@
 **Version:** 2
 
 ```sh
-symfony new . --version=lts
+symfony new . -version=lts
 rm -rf .git
 symfony server:start
 ```
