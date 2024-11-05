@@ -159,3 +159,58 @@ Neither the call to create table, nor the insert of data should fail in case the
 The final version of this exercise should allow the user to insert information into the database using the provided form and see the list of all entities from the database.
 
 Hint: for doctrine commands, you can see the list by running `php appconsole doctrine` in the command line.
+
+## Exercise 04: SQL - delete using request with condition
+
+Turn-in directory: `ex04/`  
+Files to turn in: Files and folder from your application  
+Allowed functions: All methods
+
+Continuing with the CRUD specific operations, we get now to the point of Delete. For this exercise, using only SQL and PHP code, you will have to write a Symfony specific bundle which will handle this kind of operation. The delete should be made using an endpoint of the application which accepts a conditioned request, something like `/delete/?id=` or `/delete/{id}`, where the id would represent an unique identifier of the object to be deleted.
+
+The requirements of this exercise are the following:
+- Work within the default application bundle
+- Create a separate table for this exercise
+- Create a controller method which has a route with parameter for deleting information
+- Create SQL code for deleting information from the database
+- Check if an item exists in the database
+- Design an HTML page in which to show the existing information from the database in an HTML table and add the button for deleting each specific row
+- Use only SQL code for deleting information from the database, no ORM allowed
+- Add a success/error message on the designed webpage for representing the obtained result of the operation
+
+## Exercise 05: ORM - delete using request with condition
+
+Turn-in directory: `ex05/`  
+Files to turn in: Files and folder from your application  
+Allowed functions: All methods
+
+For achieving CRUD in Symfony, ORM provides also methods for deleting entities from the database. This exercise will help you find the way of using delete option in Doctrine ORM. Following the requirements of the last exercise, you will have to implement the Delete option using only ORM. More precisely, the following requirements must be met:
+
+- Work within the default application bundle
+- Create a new entity specialized for this exercise. You can take the structure from exercise 00 as an example
+- Create a controller method which has a route with a parameter for deleting information
+- Check if an item exists in the database
+- Design an HTML page in which to show the existing information from the database in an HTML table and add the button for deleting each specific row
+- Use only ORM commands for deleting information from the database
+- Add a success/error message on the designed webpage for representing the obtained result of the operation
+
+## Exercise 06: SQL: update database information
+
+Turn-in directory: `ex06/`  
+Files to turn in: Files and folder from your application  
+Allowed functions: All methods
+
+The last element from the CRUD package is Update. For this exercise, using only SQL and PHP code, you will build, in Symfony framework, a bundle that is capable of updating an existing entity. To be more precise, each entity is mapped to at least a table from the database, so, in conclusion, you will have to update the tables from the database.
+
+In order to solve this exercise, you will have to respect the following conditions:
+- Work within the default application bundle
+- Create a separate table in the database for this exercise. You can use as guideline the structure from ex00
+- Create a webpage for displaying the entities that exist in the database using a table
+- For each element from the webpage table, add a button for "Update", which will take the user to the edit page
+- Create a form which will be autocompleted with the entity details and will allow the user to change each of the fields
+- Design a controller with required methods for listing and updating entities from the database
+- Use only SQL code for handling database updates, no ORM allowed
+- No validation or conditions are required (unique fields, correct inserted values, etc)
+- Display a success/error message on the list page, after updating an entity
+
+In the final version, this exercise will provide the option to update existing information from the database. By designing it, you will have completed the CRUD operations using SQL.
