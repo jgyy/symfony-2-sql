@@ -40,3 +40,63 @@ One of the most common and challenging tasks for any application involves persis
 - Your functions should not quit unexpectedly (segmentation fault, bus error, double free, etc) apart from undefined behaviors. If this happens, your project will be considered non functional and will receive a 0 during the evaluation.
 - We encourage you to create test programs for your project even though this work won't have to be submitted and won't be graded.
 - Submit your work to your assigned git repository. Only the work in the git repository will be graded.
+
+## Chapter III: Day-specific rules
+
+- Use both annotations and configuration files for defining routes.
+- Use controller-defined form types.
+- Each displayed page must be properly formatted and should contain DocType, and HTML tags like `html`, `body`, `head`.
+- The server used for this day is the one integrated in Symfony. It should be started and stopped using Symfony console commands.
+- Only explicit request URLs should render a page without error. The not configured URLs should generate a 404 error.
+- The requested URLs should work with and without trailing slash. E.g: both `/ex00` and `/ex00/` must work
+- For solving each exercise, you will have to use only SQL, only ORM or both of them. If this condition is not met, no points will be given for your solution.
+- Each exercise has to have its own table inside the database.
+- The naming of database table should be explicit and correctly given. Eg: if you want to create a table for a model called Person, the database table should be named persons.
+
+If no other explicit information is displayed, you must assume the following versions of languages:
+- PHP - Symfony LTS
+- HTML 5
+- CSS 3
+
+## Exercise 00: Database table with SQL
+
+Turn-in directory: `ex00/`  
+Files to turn in: Files and folder from your application  
+Allowed functions: All methods
+
+This exercise will help you learn the basic of SQL usage inside of Symfony framework.
+The requirements of this exercise are simple:
+
+- Work within the default application bundle
+- Create the SQL query which will create a new table inside the database
+- Configure database connection
+- Create route which will call the generation of table
+- No ORM is allowed in this exercise
+- The structure of the table should correspond to the given one
+
+The result of this exercise has to be a page which contains a button/link to create the database table and a success/error message regarding the result of the creation.
+
+The database table structure is the following:
+- id - integer - primary key
+- username - string - unique
+- name - string
+- email - string - unique
+- enable - boolean
+- birthdate - datetime
+- address - long text
+
+The call to create table should not fail in case the table is already created.
+
+## Exercise 01: Database table with ORM
+
+Turn-in directory: `ex01/`  
+Files to turn in: Files and folder from your application  
+Allowed functions: All methods
+
+After introducing SQL with Symfony, it's time to move to ORM (Object relational mapping). In this exercise, you will have to create the same table as in Exercise 00. The requirements of this exercise are simple:
+
+- Work within the default application bundle
+- Create the corresponding entity to the required structure
+- Create route which will call the generation of table
+- No SQL is allowed in this exercise
+- The structure of the table should correspond to the given one
