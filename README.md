@@ -264,3 +264,54 @@ Files to turn in: Files and folder from your application
 Allowed functions: All methods
 
 For achieving the scope of this day, one important exercise should be done using both SQL and ORM techniques. It is now the time to update an entity and create relationships between entities using ORM. As stated in the previous exercise, there are 3 types of relations between entities (tables). One difference is that, in Symfony, these relations are made between entities and reflected in the database by automatically mapping foreign keys between tables (or creating connection tables for the many-to-many relation).
+
+In order to achieve the final result, you have to accomplish the following requirements:
+
+- Work within the default application bundle
+- Create an initial entity using the structure defined in the previous exercises (Person entity structure)
+- Add a new field (as required in the previous exercise) on the entity and update the database table
+- Create two new entities (BankAccount and Address) and make bidirectional relationships between those and Person entity
+- Use only ORM commands and instructions for handling the database structure
+- Create controller methods for handling the creation, update and relationships management
+
+Note: since Doctrine doesn't provide ways to alter the table and have a trace on it, you will have to use Doctrine migrations to add a new column on the table.
+
+## Exercise 10: SQL & ORM - Insert into database from file
+
+Turn-in directory: `ex10/`  
+Files to turn in: Files and folder from your application  
+Allowed functions: All methods
+
+Nowadays, the provider of the information to be stored can be of several types: human input, data received using calls to external web services, auto-generated data or even information read from files. In this exercise, the main focus is to store information obtained by reading files.
+
+For this exercise, you will have to propose a solution that will use both SQL and ORM at the same time. The requirements for this exercise are:
+
+- Work within the default application bundle
+- Create a new database table for SQL and a new entity (with related table) for ORM
+- Design a controller method which will read a file content and insert it into both SQL table and ORM related table
+- The controller method could be called from a link in a webpage. The information then should be visible into a table on a HTML page
+- Ensure that the information is correctly stored and no fields are lost during the reading - writing operation
+
+This exercise has to be solved using both SQL and ORM.
+
+Hint: ensure that the file you want to read information from has the correct permission rights.
+
+## Exercise 11: SQL - Request with join, sort and condition
+
+Turn-in directory: `ex11/`  
+Files to turn in: Files and folder from your application  
+Allowed functions: All methods
+
+Since these days, website are more complex than simple HTML pages, when using a database for providing information, sorting and conditional requests are very common. Also, due to database design principles, join between tables have to be made, in order for the user to have the required information. As an example, think of an e-commerce website: for a client to search for a specific product based on its type, category and color, the website backend has to make a join between the category and product tables, but also filter the result based on product color and type. In addition, if the client wants to order the list based on price, in ascending order, a sorting of the information read from the database has to be made.
+
+For this exercise, the requirements are the following:
+
+- Work within the default application bundle
+- For this exercise, you can use the database tables designed in exercise 09, due to already existing relations (you can use one-to-one relations)
+- Design an HTML webpage with a table in which to present the information stored in the database table
+- In the HTML table, add a form with filtering and sorting (eg: filter by date, sort by name)
+- Create required methods in the controller for handling the listing and generating the result after applying the created request with filtering and sorting
+- Make sure that the information displayed in the HTML table is fetched from more than one table
+- Use only SQL for making calls to the database
+- For the request of information from the database, make sure to use join, condition, sort. If one is missing, no points will be given for this exercise!
+- Add validations for parameters of the request
