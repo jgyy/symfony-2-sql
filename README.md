@@ -100,3 +100,62 @@ After introducing SQL with Symfony, it's time to move to ORM (Object relational 
 - Create route which will call the generation of table
 - No SQL is allowed in this exercise
 - The structure of the table should correspond to the given one
+
+The result of this exercise has to be a page which contains a button/link to create the database table and a success/error message regarding the result of the creation.
+
+The database table structure is the following:
+- id - integer - primary key
+- username - string - unique
+- name - string  
+- email - string - unique
+- enable - boolean
+- birthdate - datetime
+- address - long text
+
+The call to create table should not fail in case the table is already created.
+
+Hint: entity generation and database table creation can be made using doctrine ORM commands. The commands can be found by typing `php appconsole doctrine` inside the terminal. Also, these terminal commands can be called inside Symfony controllers.
+
+## Exercise 02: Insert and read with SQL
+
+Turn-in directory: `ex02/`  
+Files to turn in: Files and folder from your application  
+Allowed functions: All methods
+
+Using your previously gained knowledge, you should now be able to make other operations from the CRUD packet. Lets start with Insert and Read.
+
+This exercise will help you gain knowledge about mapping information from website forms to SQL queries. The requirements of this exercise are:
+
+- Work within the default application bundle
+- Create a separate table for this exercise, using the same structure as in the previous exercises
+- This exercise will be solved using only SQL, no ORM allowed
+- Create a Symfony form and a show form action in the controller
+- Create a controller endpoint for handling the information submitted from the form
+- Make sure the unique fields will not throw exceptions on insert
+- Create a webpage containing an HTML table in which to show the database content
+
+Neither the call to create table, nor the insert of data should fail in case the table is already created or the data is already present in the table.
+
+## Exercise 03: Insert and read with ORM
+
+Turn-in directory: `ex03/`  
+Files to turn in: Files and folder from your application  
+Allowed functions: All methods
+
+Moving back to ORM, the operations presented in the last exercise can be implemented using only Symfony Doctrine ORM specific commands. For Insert and Read with ORM, the list of requirements are the following:
+
+- Work within the default application bundle
+- Create a new entity with its own independent table, using the same structure as in the previous exercises
+- This exercise will be solved using only Doctrine ORM
+- Create a Symfony form and map it to the entity created earlier
+- Create specific endpoints in the controller for Show form, handle inserted data and view the existing data from the database
+- Make sure the unique fields will not throw exceptions on insert
+- Create a webpage containing an HTML table in which to show the database content
+- The form should contain validation
+- The ORM commands should not be handled in the controller
+
+Neither the call to create table, nor the insert of data should fail in case the table is already created or the data is already present in the table.
+
+The final version of this exercise should allow the user to insert information into the database using the provided form and see the list of all entities from the database.
+
+Hint: for doctrine commands, you can see the list by running `php appconsole doctrine` in the command line.
